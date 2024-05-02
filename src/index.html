@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+  @@include('template-parts/head.html', { 'title': 'Головна' })
+  <body>
+    <div class="wrapper">
+      @@include('template-parts/header.html', { })
+      <main>
+        <div class="new-services">
+          <section class="services" style="background-image: url('./img/mc-services-bg.webp')">
+            <div class="services__gradient"></div>
+            <div class="services__container">
+              <h1 class="services__title">
+                Web Design, Development & Digital <br />
+                Marketing Services
+              </h1>
+              <div class="services__body">
+                <a href="#" class=" item-services">
+                  <h2 class="item-services__text">Web Design & Development</h2>
+                  
+                  
+                  
+                  
+                  <img src="<?php echo $item['image']['url']; ?>" alt="<?php echo $item['image']['alt']; ?>" class="item-services__image">
+                  <img src="<?php echo $item['image_hover']['url']; ?>" alt="<?php echo $item['image_hover']['alt']; ?>" class="item-services__image_hover">
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      @@include('template-parts/footer.html', { }) @@include('template-parts/modal.html', { })
+    </div>
+    <script type="module" crossorigin src="./js/app.min.js"></script>
+  </body>
+</html>
+<?php $services_title = get_field('services_title'); ?>
+<?php $services_list = get_field('services_list'); ?>
+<?php $background_image = get_field('background_image'); ?>
+
+<?php if ( $services_list ) : ?>
+  
+<?php echo $services_list; ?>
+<?php endif; ?>
+
